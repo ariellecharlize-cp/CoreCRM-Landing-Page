@@ -1,8 +1,35 @@
 <template>
+<div class="bg-white border-b border-emerald-pale">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+   
+   <!--icon-->
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-emerald rounded-lg flex items-center justify-between p-1.5 text-white font-black text-center">
+        C
+      </div>
+      <span class="text-xl font-black text-emerald-dark tracking-tight"> CoreCRM</span>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-emerald ml-auto mr-8">
+      <a href="#" class="hover:text-emerald-dark transition">Features</a>
+      <a href="#" class="hover:text-emerald-dark  transition">Pricing</a>
+      <a href="#" class="hover:text-emerald-dark  transition">About Us</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      
+      <a href="#" target="_blank" class="bg-emerald text-white text-sm font-bold hover:bg-emerald-dark transition px-4 py-2.5 rounded-xl inline-flex items-center gap-1.5 shadow-sm" >
+        <span>Get started</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
 <section class="bg-emerald-light text-emerald-dark py-24 px-6 text-center">
     <div class="max-w-4xl mx-auto">
 
-<p class="text-sm mb-4 text-emerald font-bold bg-emerald-pale inline-block px-3 py-1 rounded-md font-['Plus_Jakarta_Sans']">
+<p class="text-sm mb-4 text-emerald font-bold bg-emerald-pale inline-block px-3 py-1 rounded-full font-['Plus_Jakarta_Sans']">
   #1 CRM for Growing Teams
 </p>
 
@@ -17,23 +44,23 @@
        Streamline your sales pipeline with smart contact <br> management, real-time analytics, and team <br> collaboration tools.
       </p>
 
-      <div class="flex flex-col md:flex-row justify-center gap-4 max-w-xl mx-auto">
+      <div class="flex md:flex-row justify-center gap-4 max-w-xl mx-auto">
 
         <input
           v-model="email"
           type="email"
-          placeholder="Enter your email"
-          class="bg-white text-black px-5 py-4 rounded-xl w-full outline-none"
+          placeholder="Enter your work email..."
+          class="bg-white text-gray-500 px-5 py-4 rounded-xl w-full border-2 border-emerald-faint"
         />
 
         <button
           @click="submitEmail"
-          class="bg-black hover:bg-gray-900 transition px-8 py-4 rounded-xl font-semibold"
-        >
+          class="bg-emerald text-white hover:bg-emerald-dark transition px-10 py-4 rounded-xl font-semibold whitespace-nowrap" >
           Start Free
         </button>
-
       </div>
+
+      <p class="text-sm mt-5 text-gray-400"> Free 14-day trial. No credit card required</p>
 
       <p
         v-if="submitted"

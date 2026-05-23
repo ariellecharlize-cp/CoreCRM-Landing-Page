@@ -5,8 +5,8 @@
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
         <div>
           <p class="text-sm mb-4 text-emerald font-bold bg-emerald-pale inline-block px-5 py-1 rounded-md font-['Plus_Jakarta_Sans']">
-  LIVE PREVIEW
-</p>
+        LIVE PREVIEW
+          </p>
           <h2 class="text-4xl font-bold mb-2">
             See it in action
           </h2>
