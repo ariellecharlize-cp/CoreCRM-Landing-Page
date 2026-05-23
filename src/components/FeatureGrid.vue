@@ -2,7 +2,7 @@
   <section class="py-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto text-center">
 
-     <p class="text-sm mb-4 text-emerald font-bold bg-emerald-pale inline-block px-5 py-2 rounded-full">
+     <p class="text-sm mb-4 text-emerald font-bold bg-emerald-light inline-block px-5 py-2 rounded-full">
         FEATURES
      </p>
       <h2 class="text-4xl text-emerald-dark font-bold mb-4">

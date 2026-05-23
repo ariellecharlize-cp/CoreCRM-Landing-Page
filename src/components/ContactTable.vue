@@ -1,36 +1,41 @@
 <template>
-  <section class="py-24 px-6 bg-gray-50">
+  <section class="py-24 px-6 bg-emerald-mint">
     <div class="max-w-6xl mx-auto">
 
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-        <div>
-          <p class="text-sm mb-4 text-emerald font-bold bg-emerald-pale inline-block px-5 py-1 rounded-md font-['Plus_Jakarta_Sans']">
+    <div class="max-w-6xl mx-auto text-center">
+
+     <p class="text-sm mb-4 text-emerald font-bold bg-emerald-light inline-block px-5 py-2 rounded-full">
         LIVE PREVIEW
-          </p>
-          <h2 class="text-4xl font-bold mb-2">
-            See it in action
-          </h2>
+     </p>
+      <h2 class="text-4xl text-emerald-dark font-bold mb-4">
+        See it in action
+      </h2>
 
-          <p class="text-gray-500">
-            Try searching andd filtering contacts in real-time.
-          </p>
-        </div>
+      <p class="text-emerald mb-10">
+        Try searching and filtering contacts in real-time.
+      </p>
+    </div>
 
+  <div class="card bg-white rounded-2xl p-10">
+        
+    <div class="flex felx-col md:flex-row items-center justify between gap-7">
         <input
           v-model="search"
           type="text"
-          placeholder="Search contacts"
-          class="border border-gray-300 rounded-xl px-5 py-3 w-full md:w-80 bg-white"
+          placeholder="Search contacts..."
+          class="border-2 border-emerald-pale bg-emerald-mint rounded-xl px-5 py-3 w-full md:w-190"
         />
-      </div>
-      <p class="mt-6 mb-3 text-gray-500">
+        <button class="text-emerald font-bold border-2 border-emerald-pale bg-emerald-mint rounded-xl px-5 py-3 w-full md:w-60 hover:bg-emerald hover:text-white"> All Status </button>
+    </div>
+      <p class="mt-6 mb-3 text-emerald font-bold">
         Showing {{ filteredContacts.length }} of contacts.
       </p>
-      <div class="overflow-x-auto bg-white rounded-2xl shadow-lg">
 
+
+      <div class="overflow-x-auto bg-white rounded-2xl border-1 border-emerald-pale">
         <table class="w-full">
 
-          <thead class="bg-gray-100 text-left">
+          <thead class="bg-emerald-mint text-left text-emerald-medium border-1 border-emerald-pale">
             <tr>
               <th class="p-5">NAME</th>
               <th class="p-5">EMAIL</th>
@@ -43,23 +48,38 @@
             <tr
               v-for="(contact, index) in filteredContacts"
               :key="index"
-              class="border-t border-gray-100 hover:bg-gray-50"
+              class="border-1 border-emerald-pale hover:bg-emerald-100"
             >
+
               <td class="p-5">
-                {{ contact.name }}
+                <div class="flex items-center gap-3">
+                  
+                  <div
+                    class="w-10 h-10 rounded-full bg-emerald-pale text-emerald-700 flex items-center justify-center font-bold"
+                  >
+                    {{ contact.name.split(' ').map(n => n[0]).join('') }}
+                  </div>
+
+                  <span class="text-emerald-medium font-bold">
+                    {{ contact.name }}
+                  </span>
+
+                </div>
               </td>
 
-              <td class="p-5 text-gray-500">
+              <td class="p-5 text-emerald">
                 {{ contact.email }}
               </td>
 
               <td class="p-5">
                 <span
-                  class="px-4 py-2 rounded-full text-sm font-medium"
+                  class="px-4 py-1 rounded-full text-sm font-bold"
                   :class="
                     contact.status === 'Active'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-red-100 text-red-700'
+                      ? 'bg-green-100 text-emerald'
+                      : contact.status === 'Inactive'
+                      ? 'bg-red-100 text-red-500'
+                      : 'bg-amber-100 text-amber-600'
                   "
                 >
                   {{ contact.status }}
@@ -77,6 +97,7 @@
 
       </div>
 
+    </div>
     </div>
   </section>
 </template>
@@ -112,7 +133,7 @@ export default {
         {
           name: 'Kim Lee',
           email: 'kim@design.com',
-          status: 'Active',
+          status: 'Inactive',
           action: 'View'
         },
       ],
