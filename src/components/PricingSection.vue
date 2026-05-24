@@ -2,19 +2,22 @@
   <section class="py-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto text-center">
 
-      <h2 class="text-4xl font-bold mb-4">
+      <p class="text-sm mb-4 text-emerald font-bold bg-emerald-light inline-block px-5 py-2 rounded-full">
+        PRICING
+     </p>
+      <h2 class="text-4xl text-emerald-dark font-bold mb-4">
         Simple, transparent pricing
       </h2>
 
-      <p class="text-gray-500 mb-10">
+      <p class="text-emerald mb-10">
         No hidden fess, Cancel anytime.
       </p>
 
       <button
         @click="toggleBilling"
-        class="mb-12 bg-emerald-surface hover:bg-emerald hover:text-white px-6 py-3 rounded-full font-semibold"
+        class="mb-12 bg-emerald-surface text-emerald-dark hover:bg-emerald hover:text-white px-6 py-3 rounded-full font-semibold"
       >
-        {{ yearly ? 'Monthly' : 'Annual' }}
+        {{ yearly ? 'Monthly' : 'Annual -20%' }}
       </button>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -63,6 +66,7 @@ export default {
         },
         
         {
+          badge: 'Most Popular',
           name: 'Pro',
           description: 'For growing teams.',
           monthly: 29,

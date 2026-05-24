@@ -1,10 +1,14 @@
 <template>
-  <div class="group bg-emerald-surface rounded-2xl shadow-lg p-8 border border-emerald-pale text-center hover:bg-emerald hover:text-white hover:scale-105 transition duration-300">
-    <h3 class="text-2xl font-bold mb-4">
+  <div class="relative group bg-emerald-surface text-emerald-dark rounded-2xl shadow-lg p-8 border-2 border-emerald-pale text-center hover:bg-emerald hover:text-white hover:scale-105 transition duration-300">
+    <div v-if="plan.badge" class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-dark text-white text-sm font-semibold px-4 py-1 rounded-full shadow-md"    >
+      {{ plan.badge }}
+    </div>
+
+    <h3 class="text-2xl font-bold mb-2">
       {{ plan.name }}
     </h3>
 
-    <p class="text-gray-500 group-hover:text-white mb-6 ">
+    <p class="text-emerald group-hover:text-white mb-6 ">
       {{ plan.description }}
     </p>
 
@@ -28,7 +32,7 @@
 
     <button
       @click="$emit('choose-plan', plan.name)"
-      class="text-emerald bg-white border-2 border-emerald hover:text-emerald px-6 py-3 rounded-xl w-full font-semibold"
+      class="text-emerald bg-white border-3 border-emerald hover:text-emerald px-6 py-3 rounded-xl w-full font-semibold"
     >
       Get Started
     </button>
