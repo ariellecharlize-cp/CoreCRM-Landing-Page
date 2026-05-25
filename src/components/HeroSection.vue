@@ -10,18 +10,36 @@
       <span class="text-xl font-black text-emerald-dark tracking-tight"> CoreCRM</span>
     </div>
 
+    <!-- Desktop View -->
     <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-emerald ml-auto mr-8">
       <a href="#" class="hover:text-emerald-dark transition">Features</a>
       <a href="#" class="hover:text-emerald-dark  transition">Pricing</a>
       <a href="#" class="hover:text-emerald-dark  transition">About Us</a>
     </nav>
 
-    <div class="flex items-center gap-3">
-      
-      <a href="#" target="_blank" class="bg-emerald text-white text-sm font-bold hover:bg-emerald-dark transition px-4 py-2.5 rounded-xl inline-flex items-center gap-1.5 shadow-sm" >
-        <span>Get started</span>
-      </a>
-    </div>
+    <!-- Mobile View -->    
+    <button class="md:hidden ml-auto text-emerald-dark">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    <!-- End Mobile View -->  
+
+        <!-- Desktop Button Only -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#"
+            target="_blank"
+            class="bg-emerald text-white text-sm font-bold hover:bg-emerald-dark transition px-4 py-2.5 rounded-xl inline-flex items-center gap-1.5 shadow-sm">
+            <span>Get started</span>
+          </a>
+        </div>
 
   </div>
 </div>
@@ -45,19 +63,22 @@
       </p>
 
       <div class="flex md:flex-row justify-center gap-4 max-w-xl mx-auto">
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input
+            v-model="email"
+            type="email"
+            placeholder="Enter your work email..."
+            class="bg-white text-gray px-25 py-4 rounded-xl w-full border-4 border-emerald-faint"
+          />
 
-        <input
-          v-model="email"
-          type="email"
-          placeholder="Enter your work email..."
-          class="bg-white text-gray-500 px-5 py-4 rounded-xl w-full border-2 border-emerald-faint"
-        />
+          <button
+            @click="submitEmail"
+            class="bg-emerald text-white hover:bg-emerald-dark transition px-7 py-4 rounded-xl font-semibold whitespace-nowrap" >
+            Start Free
+          </button>
+        </div>
 
-        <button
-          @click="submitEmail"
-          class="bg-emerald text-white hover:bg-emerald-dark transition px-10 py-4 rounded-xl font-semibold whitespace-nowrap" >
-          Start Free
-        </button>
       </div>
 
       <p class="text-sm mt-5 text-gray-400"> Free 14-day trial. No credit card required</p>

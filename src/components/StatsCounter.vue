@@ -12,7 +12,7 @@
       </p>
     </div>
 
-        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mt-10">
+        <div class="grid grid-cols-2 grid-rows-2 md:flex items-center justify-center gap-10 mt-10">
             
             <div class="text-center">
                 <p class="text-4xl text-white font-bold mb-2">

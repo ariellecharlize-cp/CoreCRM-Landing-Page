@@ -16,16 +16,16 @@
       </p>
     </div>
 
-  <div class="card bg-white rounded-2xl p-10">
+  <div class="border-4 border-emerald-light bg-white rounded-2xl p-10">
         
-    <div class="flex felx-col md:flex-row items-center justify between gap-7">
+    <div class="flex flex-col md:flex-row items-center justify between gap-4">
         <input
           v-model="search"
           type="text"
           placeholder="Search contacts..."
           class="border-2 border-emerald-pale bg-emerald-mint rounded-xl px-5 py-3 w-full md:w-190"
         />
-        <button class="text-emerald font-bold border-2 border-emerald-pale bg-emerald-mint rounded-xl px-5 py-3 w-full md:w-60 hover:bg-emerald hover:text-white"> All Status </button>
+        <button class="text-left text-emerald font-bold border-2 border-emerald-pale bg-emerald-mint rounded-xl px-5 py-3 w-full md:w-60 hover:bg-emerald hover:text-white"> All Status </button>
     </div>
       <p class="mt-6 mb-3 text-emerald font-bold">
         Showing {{ filteredContacts.length }} of contacts.
@@ -35,7 +35,7 @@
       <div class="overflow-x-auto bg-white rounded-2xl border-1 border-emerald-pale">
         <table class="w-full">
 
-          <thead class="bg-emerald-mint text-left text-emerald-medium border-1 border-emerald-pale">
+          <thead class="hidden md:table-header-group bg-emerald-mint text-left text-emerald-medium border-1 border-emerald-pale">
             <tr>
               <th class="p-5">NAME</th>
               <th class="p-5">EMAIL</th>
@@ -51,7 +51,8 @@
               class="border-1 border-emerald-pale hover:bg-emerald-100"
             >
 
-              <td class="p-5">
+            <!--mobile view name-->
+              <td class="pl-6 pt-3 p-2 md:p-5 block md:table-cell">
                 <div class="flex items-center gap-3">
                   
                   <div
@@ -67,11 +68,13 @@
                 </div>
               </td>
 
-              <td class="p-5 text-emerald">
+              <!--mobile view email-->
+              <td class="pl-6 p-2 md:p-5 text-emerald block md:table-cell">
                 {{ contact.email }}
               </td>
 
-              <td class="p-5">
+              <!--mobile view status-->
+              <td class="pl-6 p-2 md:p-5 text-emerald block md:table-cell">
                 <span
                   class="px-4 py-1 rounded-full text-sm font-bold"
                   :class="
@@ -85,8 +88,8 @@
                   {{ contact.status }}
                 </span>
               </td>
-
-              <td class="p-5 text-emerald-500 font-bold">
+              <!--mobile view action-->
+              <td class="pl-6 pb-3 p-2 md:p-5 text-emerald-500 font-bold block md:table-cell">
                 {{ contact.action }}
               </td>
 
